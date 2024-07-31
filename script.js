@@ -46,10 +46,10 @@ function setGridBoxEvent() {
 
 //Remove every Box from container
 function deleteBoard() {
-  const gridBoxes = document.querySelectorAll('div');
+  const gridBoxes = document.querySelectorAll('.grid-box');
 
   gridBoxes.forEach((box) => {
-    box.remove();
+    container.removeChild(box);
   });
 };
 
@@ -65,7 +65,7 @@ margin: -35px`;
 button.addEventListener('click', changeBoardSize);
 
 function changeBoardSize() {
-  const newSize = prompt('Enter the new Size');
+  const newSize = prompt('Enter the new Size (0 - 100)');
 
   if (newSize && !isNaN(newSize) && newSize > 0 && newSize <= 100) {
     deleteBoard();
