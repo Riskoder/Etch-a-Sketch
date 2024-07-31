@@ -14,6 +14,7 @@ function makeBoard(size) {
     flex-direction: column`;
     container.appendChild(newDiv);
   };
+  setGridBoxEvent();
 };
 
 // Get Background color
@@ -27,6 +28,10 @@ function setBackgroundColor() {
   let b = getRandomNumber();
   return`rgb(${r}, ${g}, ${b})`
 }
+//Other way to change colors:
+// function changeColor() {
+//   return `rgb(${getRandomNumber}, rgb(${getRandomNumber}, rgb(${getRandomNumber})`
+// }
 
 //Change grid color:
 function setGridBoxEvent() {
@@ -39,14 +44,37 @@ function setGridBoxEvent() {
   });
 };
 
-//Other way to change colors:
-// function changeColor() {
-//   return `rgb(${getRandomNumber}, rgb(${getRandomNumber}, rgb(${getRandomNumber})`
-// }
+//Remove every Box from container
+function deleteBoard() {
+  const gridBoxes = document.querySelectorAll('div');
+
+  gridBoxes.forEach((box) => {
+    box.remove();
+  });
+};
+
+//Make button for resize board
+const button = document.createElement('button');
+button.textContent = 'ReSize Board';
+container.appendChild(button);
+button.style.cssText = `
+position: absolute;
+bottom: 0;
+margin: -35px`;
+
+button.addEventListener('click', changeBoardSize);
+
+function changeBoardSize() {
+  const newSize = prompt('Enter the new Size');
+
+  if (newSize && !isNaN(newSize) && newSize > 0 && newSize <= 100) {
+    deleteBoard();
+    makeBoard(newSize);
+  };
+};
 
 function startGame() {
   makeBoard(16);
-  setGridBoxEvent();
 }
 
 startGame()
