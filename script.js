@@ -1,6 +1,5 @@
 const container = document.querySelector('.container');
 
-// Make board grid
 function makeBoard(size) {
   for (let i = 1; i <= size * size; i++) {
     const newDiv = document.createElement('div');
@@ -9,9 +8,7 @@ function makeBoard(size) {
     newDiv.style.cssText = `
     display: flex;
     flex: 0 0 calc(100%/ ${size});
-    height: calc(100% / ${size}); 
-    gap: 3px; 
-    flex-direction: column`;
+    height: calc(100% / ${size}); `;
     container.appendChild(newDiv);
   };
   setGridBoxEvent();
