@@ -7,6 +7,8 @@ body {
   justify-content: center;
 
   font-family: 'Pacifico';
+
+  background-color: rgb(1, 22, 39);
 }
 
 .container {
@@ -18,9 +20,11 @@ body {
 
   margin-top: 20px;
 
+  background-color: whitesmoke;
+
   border: 40px solid lightseagreen;
   border-radius: 12px;
-  outline: 3px solid black;
+  outline: 3px solid rgb(73, 90, 48);
 
   width: 820px;
   height: 820px;
