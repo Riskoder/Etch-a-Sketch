@@ -52,12 +52,9 @@ function deleteBoard() {
 
 //Make button for resize board
 const button = document.createElement('button');
-button.textContent = 'ReSize Board';
+button.textContent = 'Resize Board';
+button.classList.add('resize-button');
 container.appendChild(button);
-button.style.cssText = `
-position: absolute;
-bottom: 0;
-margin: -35px`;
 
 button.addEventListener('click', changeBoardSize);
 
