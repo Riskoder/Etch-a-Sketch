@@ -41,11 +41,9 @@ function setGridBoxEvent() {
 
 //Remove every Box from container
 function deleteBoard() {
-  const gridBoxes = document.querySelectorAll('.grid-box');
-
-  gridBoxes.forEach((box) => {
-    container.removeChild(box);
-  });
+  while (container.firstChild) {
+    container.removeChild(container.firstChild)
+  };
 };
 
 //Make button for resize board
