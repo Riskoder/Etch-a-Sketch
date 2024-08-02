@@ -38,3 +38,9 @@ body {
 
   color: greenyellow;
 }
+
+.resize-button {
+  position: absolute;
+  bottom: 0;
+  margin: -35px
+}
