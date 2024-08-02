@@ -11,7 +11,6 @@ function makeBoard(size) {
     height: calc(100% / ${size}); `;
     container.appendChild(newDiv);
   };
-  setGridBoxEvent();
 };
 
 // Get Background color
@@ -32,13 +31,11 @@ function setBackgroundColor() {
 
 //Change grid color:
 function setGridBoxEvent() {
-  const gridBox = document.querySelectorAll('.grid-box');
-
-  gridBox.forEach((box) => {
-    box.addEventListener('mouseover', () => {
-      box.style.backgroundColor = setBackgroundColor();
-    });
-  });
+  container.addEventListener('mouseover', (e) => {
+    if (e.target.classList.contains('grid-box')) {
+      e.target.style.backgroundColor = setBackgroundColor();
+    }
+  })
 };
 
 //Remove every Box from container
@@ -68,6 +65,7 @@ function changeBoardSize() {
 };
 
 function startGame() {
+  setGridBoxEvent();
   makeBoard(16);
 }
 
