@@ -11,6 +11,7 @@ function makeBoard(size) {
     height: calc(100% / ${size}); `;
     container.appendChild(newDiv);
   };
+  setGridBoxEvent();
 };
 
 // Get Background color
@@ -65,7 +66,6 @@ function changeBoardSize() {
 };
 
 function startGame() {
-  setGridBoxEvent();
   makeBoard(16);
 }
 
